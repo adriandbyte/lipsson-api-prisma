@@ -2,15 +2,15 @@
 GET http://localhost:3000/users
 
 ### GET USER BY ID 
-GET http://localhost:3000/users/2
+GET http://localhost:3000/users/7f57f6b3-3910-4993-bb94-931d0851eec8/
 
 ### CREATE USER 
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "username": "CarlosMartinez",
-  "email": "carlosM@gmail.com",
+  "username": "pilondg",
+  "email": "pilon.dev@gmail.com",
   "password": "1234"
 }
 
@@ -25,4 +25,14 @@ Content-Type: application/json
 
 ### DELETE USER 
 DELETE http://localhost:3000/users/19
+
+### LOGIN USER
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "username": "pilondg",
+  "email": "pilon.dev@gmail.com",
+  "password": "1234"
+}
 

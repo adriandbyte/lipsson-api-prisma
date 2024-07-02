@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./",
-    "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "noImplicitAny": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
