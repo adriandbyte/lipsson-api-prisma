@@ -1,11 +1,16 @@
 import { Router } from "express";
 import { UserController } from "../controllers/user";
+import { UserModel } from "../models/mysql/user";
 
-export const userRouter = Router();
+export const createUserRouter = ({ userModel }: { userModel: UserModel }) => {
+  const userRouter = Router();
+  const userController = new UserController({ userModel });
 
-userRouter.get("/", UserController.getAllUsers);
-userRouter.get("/:id", UserController.getById);
+  userRouter.get("/", userController.getAllUsers);
+  userRouter.get("/:id", userController.getById);
+  userRouter.post("/", userController.create);
+  userRouter.put("/:id", userController.update);
+  userRouter.delete("/:id", userController.delete);
 
-userRouter.post("/", UserController.create);
-userRouter.put("/:id", UserController.update);
-userRouter.delete("/:id", UserController.delete);
+  return userRouter;
+};

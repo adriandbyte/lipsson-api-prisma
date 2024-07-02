@@ -47,12 +47,10 @@ export class UserModel {
 
   static async delete(id: number) {
     try {
-      await prisma.user.delete({
+      const deleted = await prisma.user.delete({
         where: { user_id: id },
       });
-      return {
-        message: "User deleted successfully",
-      };
+      return deleted;
     } catch (error) {
       console.log(error);
       throw new Error("Failed to delete user");

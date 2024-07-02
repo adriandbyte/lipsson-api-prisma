@@ -1,13 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { userRouter } from "./routes/user";
+import { createUserRouter } from "./routes/user";
+import { UserModel } from "./models/mysql/user";
 
-const app = express();
-app.use(bodyParser.json());
-const port = 3000;
+export const createApp = ({ userModel }: { userModel: UserModel }) => {
+  const app = express();
 
-app.use("/users", userRouter);
+  const userRouter = createUserRouter({ userModel });
+  app.use(bodyParser.json());
+  const port = 3000;
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+  app.use("/users", userRouter);
+
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+};

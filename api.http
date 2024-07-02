@@ -1,21 +1,21 @@
-### Recuperar todas los usuarios
+### GET ALL USERS
 GET http://localhost:3000/users
 
-### Recuperar un usuario
+### GET USER BY ID 
 GET http://localhost:3000/users/2
 
-### Crear un usuario
+### CREATE USER 
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "username": "GiselaMrqz",
-  "email": "giselaramirez@gmail.com",
+  "username": "CarlosMartinez",
+  "email": "carlosM@gmail.com",
   "password": "1234"
 }
 
-### Actualizar un usuario
-PUT http://localhost:3000/users/4
+### UPDATE USER
+PUT http://localhost:3000/users/16
 Content-Type: application/json
 
 {
@@ -23,6 +23,6 @@ Content-Type: application/json
   "username": "Taliwas"
 }
 
-### Eliminar un usuario
-DELETE http://localhost:3000/users/5
+### DELETE USER 
+DELETE http://localhost:3000/users/19
 
